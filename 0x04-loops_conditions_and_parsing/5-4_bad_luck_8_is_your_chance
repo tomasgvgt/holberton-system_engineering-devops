@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Bash script that loops from 1 to 10 and displays different things
+# in 4th and 8th iterations
+
+i=0
+while [ $i -lt 10 ]
+do
+if [ $i -eq 3 ]
+then
+    echo bad luck
+elif [ $i -eq 7 ]
+then
+    echo good luck
+else
+    echo Holbeton School
+fi
+(( i++ ))
+done

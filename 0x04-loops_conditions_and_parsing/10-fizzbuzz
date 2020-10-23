@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Bash script for FizzBuzz
+
+num=1
+while [ $num -lt 101 ]
+do
+if [ $((num % 3 )) -eq 0 ]
+then
+	if [ $((num % 5 )) -eq 0 ]
+	then
+	    echo FizzBuzz
+	else
+	    echo Fizz
+	fi
+elif [ $((num % 5 )) -eq 0 ]
+then
+    echo Buzz
+else
+    echo $num
+fi
+(( num++ ))
+done

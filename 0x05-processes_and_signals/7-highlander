@@ -2,8 +2,8 @@
 # script that displays To infinity and beyond indefinitely.
 # cant be killed with SIGTERM
 trap "echo 'I am invincible!!!'" SIGTERM
-while [ 1 ]
+while true
 do
-    echo To infinity and beyond
+    echo "To infinity and beyond"
     sleep 2
 done

@@ -7,7 +7,7 @@
 #  that it configures a brand new Ubuntu machine to the requirements asked
 #   in this task
 
-apt-get update
-apt-get install nginx
-sed -i "rewrite ^/redirect_me$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent" /etc/nginx/sites-available/default
+sudo apt-get update
+sudo apt-get install nginx
+sudo sed -i "rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent" /etc/nginx/sites-available/default
 sudo service nginx start

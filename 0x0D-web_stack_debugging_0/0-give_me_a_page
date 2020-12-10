@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Get Apache to run on the container and to return a page containing
+# Hello Holberton when querying the root of it.
+
+sudo apt-get -y install apache2
+echo "Hello Holberton" | sudo tee /var/www/html/index.html
+sudo service apache2 start

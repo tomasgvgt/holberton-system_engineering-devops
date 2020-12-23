@@ -16,7 +16,7 @@ frontend load_balancer
 backend foo
     balance roundrobin
     server 1650-web-01 35.196.132.192:80 check
-    server 1650-web-02 35.243.157.117:80 check
+    server 1650-web-02 34.74.159.94:80 check
 "
 echo "$FEBE" >> /etc/haproxy/haproxy.cfg
 sudo service haproxy restart

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#Bash script that displays information about subdomains.
+
+subdomain_info () {
+    if [ ! -z "$1" ] && [ -z "$2" ]
+    then
+	dig www.tomasgomez.tech | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print "The subdomain www is a " $4 " record and points to " $5}'
+	dig lb-01.tomasgomez.tech | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print "The subdomain lb-01 is a " $4 " record and points to " $5}'
+	dig web-01.tomasgomez.tech | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print "The subdomain web-01 is a " $4 " record and points to " $5}'
+	dig web-02.tomasgomez.tech | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print "The subdomain web-02 is a " $4 " record and points to " $5}'
+    fi
+    if [ ! -z "$1" ] && [ ! -z "$2" ]
+    then
+	dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v subdomain="$2" '{print "The subdomain " subdomain " is a " $4 " record and points to " $5}'
+    fi
+    return 0
+}
+
+subdomain_info "$1" "$2"

@@ -3,3 +3,4 @@
 # nginx must be listening on all active IPs on port 8080
 sed -i "/listen 80 default_server;/a listen 8080;" /etc/nginx/sites-available/default
 sudo service nginx restart
+ubuntu config --default-user nginx

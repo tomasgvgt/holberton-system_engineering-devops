@@ -1,5 +1,5 @@
-Host 1650-web-01
-  HostName 35.196.132.192
-  User ubuntu
-  IdentityFile ~/.ssh/holberton
-  PasswordAuthentication=no
+Host 1650-web-01 #The name we want to put to the host we will connect to
+	HostName 35.237.179.51 #IP of the host we want to connect to
+	User ubuntu #User name
+	IdentityFile ~/.ssh/holberton #Use the private key stored in that file
+	PasswordAuthentication no #Wont need password to autenticate

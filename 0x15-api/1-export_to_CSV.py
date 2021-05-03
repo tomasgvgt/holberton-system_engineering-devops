@@ -6,10 +6,10 @@ Requirements:
     The script must accept an integer as a parameter, which is the employee ID
     The script to export data in the CSV format
 """
-import sys
-import requests
-import json
 import csv
+import json
+import requests
+import sys
 
 if __name__ == "__main__":
     r_users = requests.get('https://jsonplaceholder.typicode.com/users')

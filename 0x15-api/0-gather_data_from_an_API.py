@@ -6,9 +6,9 @@ Requirements:
     The script must accept an integer as a parameter, which is the employee ID
     The script must display on the standard output the employee todo list
 """
-import sys
-import requests
 import json
+import requests
+import sys
 
 if __name__ == "__main__":
     if sys.argv[1].isdigit() and len(sys.argv) == 2:

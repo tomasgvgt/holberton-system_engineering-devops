@@ -11,22 +11,25 @@ import requests
 import json
 
 if __name__ == "__main__":
-    r_users = requests.get('https://jsonplaceholder.typicode.com/users')
-    r_todos = requests.get("https://jsonplaceholder.typicode.com/todos")
-    total_tasks = 0
-    completed_tasks = 0
-    employee_id = int(sys.argv[1])
-    completed_list = []
-    for employee in r_users.json():
-        if employee["id"] == employee_id:
-            employee_name = employee["name"]
-    for task in r_todos.json():
-        if task["userId"] == employee_id:
-            total_tasks += 1
-            if task["completed"] is True:
-                completed_tasks += 1
-                completed_list.append(task["title"])
-    print("Employee {} is done with tasks({}/{}):".format(
-            employee_name, completed_tasks, total_tasks))
-    for t in completed_list:
-        print("\t {}".format(t))
+    if sys.argv[1].isdigit():
+        r_users = requests.get(
+            'https://jsonplaceholder.typicode.com/users')
+        r_todos = requests.get(
+            "https://jsonplaceholder.typicode.com/todos")
+        total_tasks = 0
+        completed_tasks = 0
+        employee_id = int(sys.argv[1])
+        completed_list = []
+        for employee in r_users.json():
+            if employee["id"] == employee_id:
+                employee_name = employee["name"]
+        for task in r_todos.json():
+            if task["userId"] == employee_id:
+                total_tasks += 1
+                if task["completed"] is True:
+                    completed_tasks += 1
+                    completed_list.append(task["title"])
+        print("Employee {} is done with tasks({}/{}):".format(
+                employee_name, completed_tasks, total_tasks))
+        for t in completed_list:
+            print("\t {}".format(t))

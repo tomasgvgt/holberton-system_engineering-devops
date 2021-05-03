@@ -11,7 +11,7 @@ import requests
 import json
 
 if __name__ == "__main__":
-    if sys.argv[1].isdigit():
+    if sys.argv[1].isdigit() and len(sys.argv) == 2:
         r_users = requests.get(
             'https://jsonplaceholder.typicode.com/users')
         r_todos = requests.get(

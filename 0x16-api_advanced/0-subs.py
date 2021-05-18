@@ -19,12 +19,12 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    if type(subreddit) == 'str' and subreddit: 
+    if type(subreddit) == 'str' and subreddit:
         api_url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-        parameters = {'User-Agent' : 'python:api_advanced-holberton:v1.0.0'
-                    '(by /u/tomasgomezvelez)'}
+        parameters = {'User-Agent': 'python:api_advanced-holberton:v1.0.0'
+                      '(by /u/tomasgomezvelez)'}
         response = requests.get(api_url, params=parameters)
-        
+
         if response.status_code == 200:
             return response.json().get("data").get("subscribers")
     return 0

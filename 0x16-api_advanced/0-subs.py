@@ -19,7 +19,7 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    if subreddit and type(subreddit) is 'str':
+    if subreddit and type(subreddit) is str:
         api_url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
         parameters = {'User-Agent': 'python:api_advanced-holberton:v1.0.0'
                       '(by /u/tomasgomezvelez)'}
